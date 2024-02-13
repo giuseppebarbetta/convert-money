@@ -17,7 +17,7 @@ function convertCurrency () {
 
     const euroToLibra = 0.86
 
-    if(inputCurrencyValue == "" || inputCurrencyValue <= 0) {
+    if(inputCurrencyValue <= 0) {
         alert("O valor precisa ser maior que ZERO para realizar uma conversão!")
     }
 
