@@ -17,9 +17,6 @@ function convertCurrency () {
 
     const euroToLibra = 0.86
 
-    if(inputCurrencyValue <= 0) {
-        alert("O valor precisa ser maior que ZERO para realizar uma conversão!")
-    }
 
     if (currencySelectToConvert.value == "real" && currencySelect.value == "dolar") {
         currencyTarget.innerText = new Intl.NumberFormat("en-US", {
@@ -36,7 +33,7 @@ function convertCurrency () {
         currencyTarget.innerText = new Intl.NumberFormat("de-DE", {
             style: "currency",
             currency: "EUR"
-        }).format(inputCurrencyValue/euroToRealTodday)
+        }).format(inputCurrencyValue/euroToRealToday)
         currencyToConvert.innerText = new Intl.NumberFormat("pt-BR", {
             style: "currency",
             currency: "BRL"
@@ -158,7 +155,6 @@ function convertCurrency () {
             currency: "GBP"
         }).format(inputCurrencyValue)
     }
-
 }
 
 function changeSelectTarget () {
@@ -247,6 +243,8 @@ function changeSelectToConvert () {
             currency: "BRL"
         }).format(inputCurrencyValue)
     }
+
+    convertCurrency()
 }
 
 currencySelectToConvert.addEventListener("change", changeSelectToConvert)
