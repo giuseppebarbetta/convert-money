@@ -2,7 +2,6 @@ const convertButton = document.querySelector(".convert-button")
 const currencySelect = document.querySelector(".currency-select-target")
 const currencySelectToConvert = document.querySelector(".select-to-convert")
 
-
 function convertCurrency () {
     const currencyToConvert = document.querySelector(".value-to-convert")
     const inputCurrencyValue = document.querySelector(".input-currency-value").value
@@ -247,6 +246,16 @@ function changeSelectToConvert () {
     convertCurrency()
 }
 
+function verificationConvert () {
+    const inputCurrencyValue = document.querySelector(".input-currency-value").value
+
+    if (inputCurrencyValue == "" || inputCurrencyValue <=0 ) {
+        alert("Insira um valor maior que Zero para realizar uma conversão.")
+    } else {
+        convertCurrency ()
+    }    
+}
+
 currencySelectToConvert.addEventListener("change", changeSelectToConvert)
 currencySelect.addEventListener("change", changeSelectTarget)
-convertButton.addEventListener("click", convertCurrency)
+convertButton.addEventListener("click", verificationConvert)
