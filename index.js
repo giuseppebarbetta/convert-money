@@ -2,20 +2,24 @@ const convertButton = document.querySelector(".convert-button")
 const currencySelect = document.querySelector(".currency-select-target")
 const currencySelectToConvert = document.querySelector(".select-to-convert")
 
-function convertCurrency () {
+async function convertCurrency () {
     const currencyToConvert = document.querySelector(".value-to-convert")
     const inputCurrencyValue = document.querySelector(".input-currency-value").value
     const currencyTarget = document.querySelector(".value-target")
 
-    const dolarToRealToday = 5.2
-    const euroToRealToday = 5.80
-    const libraToRealToday = 6.25
+    const dataBRL = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL").then(response => response.json())
+    console.log(dataBRL)
+    const dataUSD = await fetch("https://cdn.moeda.info/api/latest.json").then(response => response.json())
+    console.log(dataUSD)
 
-    const dolarToEuro = 0.93
-    const dolarToLibra = 0.79
+    const dolarToRealToday = dataBRL.USDBRL.high
+    const euroToRealToday = dataBRL.EURBRL.high
+    const libraToRealToday = (dataUSD.rates.BRL / dataUSD.rates.GBP)
 
-    const euroToLibra = 0.86
+    const dolarToEuro = dataUSD.rates.EUR
+    const dolarToLibra = dataUSD.rates.GBP
 
+    const euroToLibra = (dataUSD.rates.GBP / dataUSD.rates.EUR)
 
     if (currencySelectToConvert.value == "real" && currencySelect.value == "dolar") {
         currencyTarget.innerText = new Intl.NumberFormat("en-US", {
