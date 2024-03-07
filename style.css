@@ -125,14 +125,11 @@ button:active {
 }
 
 @media(max-width: 431px) {
-    body {
-        max-height: 100vh;
-    }
     .img-header {
         width: 150px;
     }
     main {
-        padding: 17px;
+        padding: 26px;
     }
     select, input, button {
         height: 35px;
@@ -140,11 +137,17 @@ button:active {
     .p-value {
         font-size: 22px;
     }
+    .currency-to-convet-img, .currency-img {
+        width: 53px;
+    }
+    .arrow-currency {
+        width: 35px;
+    }
 }
 
 @media (max-width: 380px) {
     main {
-        width: 320px;
+        width: 305px;
     }
     .img-header {
         width: 125px;
