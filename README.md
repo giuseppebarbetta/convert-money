@@ -1,6 +1,6 @@
 <h1>Convert Money - Conversor de moedas na palma da sua mão</h1>
 
-<p>Este projeto é um conversor de moedas. Desenvolvido com HTML, CSS e JavaScript, com o intuito de ajudar nos cálculos de conversões para as principais moedas do mundo 🌍.</p>
+<p>Este projeto é um conversor de moedas. Desenvolvido com HTML, CSS e JavaScript, além de consumir uma API com os valores atualizados do dólar, com o intuito de ajudar nos cálculos de conversões para as principais moedas do mundo 🌍.</p>
 <br>
 <h2>Prévia: </h2>
 <img src='https://github.com/giuseppebarbetta/convert-money/assets/148505073/87a0c745-4f97-4717-9a73-793c006cf0d5' alt='print-jokenPo-interface' height='620px'> 
